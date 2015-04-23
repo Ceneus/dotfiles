@@ -1,6 +1,10 @@
 "" Layout modifications
 set t_Co=256 " Allow 256 colors
 set number
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 syntax enable
 autocmd VimResized * wincmd =
 
@@ -13,13 +17,14 @@ set tabstop=4
 "" Pathogen load
 execute pathogen#infect()
 execute pathogen#helptags()
-filetype off
+filetype on
 filetype plugin indent on
 syntax on
 
 "" Airline
 set ttimeoutlen=20
 set laststatus=2
+set noshowmode
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
